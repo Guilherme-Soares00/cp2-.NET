@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="Recommenda.Domain/Recommenda.Domain.csproj" />
+  <Project Path="Recommenda.Application/Recommenda.Application.csproj" />
+  <Project Path="Recommenda.Infrastructure/Recommenda.Infrastructure.csproj" />
+  <Project Path="Recommenda.API/Recommenda.API.csproj" />
+  <Folder Name="/tests/">
+    <Project Path="tests/Recommenda.IntegrationTests/Recommenda.IntegrationTests.csproj" />
+  </Folder>
+</Solution>
