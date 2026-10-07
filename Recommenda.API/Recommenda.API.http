@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:5080
+@genreId = 00000000-0000-0000-0000-000000000000
+
+### Verificar conexão com MySQL
+GET {{baseUrl}}/health
+
+### Listar gêneros
+GET {{baseUrl}}/api/genres
+
+### Criar gênero (guarde o id da resposta para as chamadas abaixo)
+POST {{baseUrl}}/api/genres
+Content-Type: application/json
+
+{
+  "name": "Aventura",
+  "description": "Filmes e séries de aventura."
+}
+
+### Consultar gênero
+GET {{baseUrl}}/api/genres/{{genreId}}
+
+### Atualizar gênero (a descrição pode ser null)
+PUT {{baseUrl}}/api/genres/{{genreId}}
+Content-Type: application/json
+
+{
+  "name": "Aventura",
+  "description": null
+}
+
+### Excluir gênero
+DELETE {{baseUrl}}/api/genres/{{genreId}}
+
+### Documento OpenAPI (ambiente Development)
+GET {{baseUrl}}/openapi/v1.json
