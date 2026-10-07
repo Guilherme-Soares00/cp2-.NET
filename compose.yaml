@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: mysql:8.4.11
+    container_name: TDSPB
+    environment:
+      MYSQL_ROOT_PASSWORD: TDSPB123
+      MYSQL_DATABASE: Recommenda
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - recommenda_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+volumes:
+  recommenda_mysql:
